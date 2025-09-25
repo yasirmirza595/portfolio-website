@@ -1,0 +1,92 @@
+{
+  "name": "yasir-mirza-portfolio",
+  "version": "1.3.0",
+  "private": true,
+  "type": "module",
+  "description": "Portfolio of Yasir Mirza — Full Stack Software Engineer specializing in scalable web apps, modern UI/UX, and AI-driven solutions.",
+  "author": {
+    "name": "Yasir Mirza",
+    "email": "yasirmirza595@gmail.com",
+    "url": "https://yasirmirza.com"
+  },
+  "license": "MIT",
+  "keywords": [
+    "Yasir Mirza",
+    "Software Engineer",
+    "Full Stack Developer",
+    "React",
+    "Vite",
+    "TailwindCSS",
+    "Framer Motion",
+    "AI",
+    "Agentic AI",
+    "Professional Portfolio",
+    "Web Development",
+    "Modern UI",
+    "Clean Design",
+    "Scalable Apps"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yasirmirza595/portfolio"
+  },
+  "bugs": {
+    "url": "https://github.com/yasirmirza595/portfolio/issues"
+  },
+  "homepage": "https://yasirmirza.com",
+  "funding": {
+    "type": "buymeacoffee",
+    "url": "https://www.buymeacoffee.com/yasirmirza"
+  },
+  "scripts": {
+    "dev": "vite --host --open",
+    "build": "vite build",
+    "preview": "vite preview --port 4173",
+    "analyze": "vite build --mode analyze && npx rollup-plugin-visualizer dist/stats.html",
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx src",
+    "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,css,md,json}\"",
+    "clean": "rm -rf node_modules dist && npm install",
+    "pwa": "vite build && npx vite-plugin-pwa"
+  },
+  "dependencies": {
+    "@emailjs/browser": "^4.4.1",
+    "@tailwindcss/aspect-ratio": "^0.4.2",
+    "@tailwindcss/forms": "^0.5.10",
+    "@tailwindcss/line-clamp": "^0.4.4",
+    "@tailwindcss/typography": "^0.5.16",
+    "framer-motion": "^11.0.0",
+    "lucide-react": "^0.545.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-helmet-async": "^2.0.5",
+    "react-icons": "^5.5.0",
+    "tailwindcss-animate": "^1.0.7",
+    "tailwindcss-gradients": "^3.0.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.2",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-react": "^7.35.1",
+    "postcss": "^8.5.7",
+    "postcss-nesting": "^13.0.3",
+    "postcss-preset-env": "^10.4.1",
+    "prettier": "^3.3.3",
+    "rollup-plugin-visualizer": "^6.0.3",
+    "tailwindcss": "^3.4.5",
+    "vite": "^5.3.1",
+    "vite-plugin-compression": "^0.5.2",
+    "vite-plugin-pwa": "^1.0.4"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "not dead",
+    "not < 0.5%",
+    "not IE 11"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "sideEffects": false
+}

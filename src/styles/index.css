@@ -1,0 +1,159 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "aos/dist/aos.css";
+
+/* =======================================
+   🌐 Global Styles (Enhanced)
+======================================= */
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Default transitions */
+* {
+  transition: color 0.3s ease,
+              background-color 0.3s ease,
+              border-color 0.3s ease,
+              fill 0.3s ease,
+              stroke 0.3s ease,
+              transform 0.25s ease;
+}
+
+/* ===== Scrollbar ===== */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgba(99, 102, 241, 0.4);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(99, 102, 241, 0.6);
+}
+@media (max-width: 768px) {
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+}
+
+/* ===== Body Base ===== */
+body {
+  @apply text-text-light dark:text-text-dark font-sans antialiased;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  letter-spacing: 0.2px;
+  background: linear-gradient(135deg, #f9fafb, #e5e7eb);
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+/* ✅ Dark mode gradient fix */
+html.dark body {
+  background: linear-gradient(135deg, #111827, #1f2937);
+  background-attachment: fixed;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+/* ===== Text Selection ===== */
+::selection {
+  background-color: #6366f1;
+  color: white;
+}
+
+/* ===== Links ===== */
+a {
+  @apply text-blue-600 dark:text-blue-400 transition-all;
+}
+a:hover {
+  @apply text-blue-800 dark:text-blue-500;
+}
+
+/* ===== Buttons ===== */
+button, .btn {
+  @apply px-6 py-3 rounded-lg shadow-md text-white font-semibold
+         transition-transform duration-300;
+}
+button:hover, .btn:hover {
+  @apply scale-105 shadow-lg;
+}
+button:active, .btn:active {
+  @apply scale-95;
+}
+
+/* ===== Focus States ===== */
+:focus {
+  outline: 2px solid #6366f1;
+  outline-offset: 2px;
+}
+input:focus, textarea:focus, button:focus {
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.4);
+}
+
+/* ===== Utility Classes ===== */
+
+/* Shadows */
+.shadow-intense {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+.shadow-soft {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+.shadow-lg-soft {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
+}
+
+/* Hover scale */
+.hover-scale {
+  transition: transform 0.3s ease;
+}
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+/* Accent Gradients */
+.bg-accent-gradient {
+  @apply text-white;
+  background-image: linear-gradient(135deg, #6366f1, #3b82f6);
+}
+.bg-gradient-dark {
+  background: linear-gradient(135deg, #9b4de6, #3f87f2);
+}
+
+/* Glassmorphism Variants */
+.glass {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.glass-dark {
+  background: rgba(17, 25, 40, 0.65);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Rounded */
+.rounded-xl-custom {
+  border-radius: 1.5rem;
+}
+
+/* ===== Animations ===== */
+.fade-in {
+  animation: fadeIn 0.6s ease forwards;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
