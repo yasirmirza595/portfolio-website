@@ -44,26 +44,6 @@ export default defineConfig(({ mode }) => {
             },
           ],
         },
-        workbox: {
-          runtimeCaching: [
-            {
-              urlPattern: /^https:\/\/fonts\.(googleapis|gstatic)\.com\/.*/i,
-              handler: "CacheFirst",
-              options: {
-                cacheName: "google-fonts",
-                expiration: { maxAgeSeconds: 60 * 60 * 24 * 365 }, // 1 year
-              },
-            },
-            {
-              urlPattern: /^https:\/\/cdn.jsdelivr.net\/.*/i,
-              handler: "StaleWhileRevalidate",
-              options: {
-                cacheName: "jsdelivr-cdn",
-                expiration: { maxAgeSeconds: 60 * 60 * 24 * 30 }, // 30 days
-              },
-            },
-          ],
-        },
       }),
 
       // ⚡ Compression (Brotli + Gzip)
@@ -116,7 +96,7 @@ export default defineConfig(({ mode }) => {
       target: "esnext",
       cssCodeSplit: true,
       reportCompressedSize: true,
-      minify: "esbuild", // ✅ changed here
+      minify: "esbuild",
       rollupOptions: {
         output: {
           manualChunks(id) {
@@ -151,7 +131,7 @@ export default defineConfig(({ mode }) => {
     define: {
       __APP_VERSION__: JSON.stringify(process.env.npm_package_version),
       __APP_ENV__: JSON.stringify(env.NODE_ENV),
-      __BUILD_DATE__: JSON.stringify(new Date().toISOString()), // 📅 build timestamp
+      __BUILD_DATE__: JSON.stringify(new Date().toISOString()),
     },
   };
 });
