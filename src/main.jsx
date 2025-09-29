@@ -1,10 +1,14 @@
 // src/main.jsx (or src/index.js)
-import React from "react";
+import React, { useEffect } from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 
 // 🌐 Global Styles (Tailwind + custom)
 import "./styles/index.css";
+
+// 🎬 AOS Animations
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 // 🌙 Dark Mode Setup
 const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
@@ -58,12 +62,26 @@ class ErrorBoundary extends React.Component {
   }
 }
 
+// ✅ Wrapper component for AOS init
+function RootApp() {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // animation duration
+      once: true, // animate only once
+    });
+  }, []);
+
+  return (
+    <ErrorBoundary>
+      <App />
+    </ErrorBoundary>
+  );
+}
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
   <React.StrictMode>
-    <ErrorBoundary>
-      <App />
-    </ErrorBoundary>
+    <RootApp />
   </React.StrictMode>
 );
