@@ -116,14 +116,7 @@ export default defineConfig(({ mode }) => {
       target: "esnext",
       cssCodeSplit: true,
       reportCompressedSize: true,
-      minify: "terser",
-      terserOptions: {
-        compress: {
-          drop_console: true,
-          drop_debugger: true,
-        },
-        format: { comments: false },
-      },
+      minify: "esbuild", // ✅ changed here
       rollupOptions: {
         output: {
           manualChunks(id) {
