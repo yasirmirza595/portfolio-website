@@ -4,25 +4,13 @@ module.exports = {
     // ⚡ TailwindCSS for utility-first CSS
     tailwindcss: {},
 
-    // 🚀 Autoprefixer with enhanced browser support
-    autoprefixer: {
-      flexbox: "no-2009",
-      grid: "autoplace",
-    },
+    // 🚀 Autoprefixer (default settings hi enough hain)
+    autoprefixer: {},
 
-    // 🌿 PostCSS Nesting (modern CSS nesting support)
+    // 🌿 Modern CSS nesting
     "postcss-nesting": {},
 
-    // 🔄 PostCSS Preset Env for future CSS features (without duplicate autoprefixer)
-    "postcss-preset-env": {
-      stage: 3,
-      autoprefixer: false,
-      features: {
-        "nesting-rules": true,
-      },
-    },
-
-    // 👨‍💻 CSS Variables support (custom properties preserved)
+    // 👨‍💻 CSS Variables support
     "postcss-custom-properties": { preserve: true },
 
     // ⚡ Optimize CSS only in production
@@ -35,7 +23,7 @@ module.exports = {
                 discardComments: { removeAll: true },
                 normalizeWhitespace: true,
                 reduceTransforms: true,
-                svgo: false // disable SVG optimization conflicts
+                svgo: false, // disable SVG optimization conflicts
               },
             ],
           },
