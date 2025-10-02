@@ -6,7 +6,7 @@ My personal portfolio website showcasing my projects, skills, and contact inform
 [View Live](https://portfolio-website-pi-gilt-94.vercel.app/)
 
 ## 📸 Screenshot
-![Homepage Screenshot](./assets/homepage.png)
+![Homepage Screenshot](./assets/portfoliopage.png)
 
 ## ✨ Features
 - Modern, responsive design
